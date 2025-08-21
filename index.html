@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>System Warning</title>
+  <style>
+    body {
+      background-color: #001f3f;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    #timer {
+      font-size: 80px;
+      color: #00aaff;
+    }
+    #hackedImage {
+        display: none;
+        margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="timer">10</div>
+  <img id="hackedImage" src="img/WhatsApp Image 2025-08-16 at 19.12.20_f930f457.jpg" />
+  <audio id="alarmSound" src="MUSIC.MP3/alarm-301729.mp3"></audio>
+
+  <script>
+    let timeLeft = 10;
+    const timerDiv = document.getElementById('timer');
+    const hackedImage = document.getElementById('hackedImage');
+    const alarmSound = document.getElementById('alarmSound');
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      timerDiv.textContent = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        timerDiv.style.display = 'none';
+        hackedImage.style.display = 'block';
+        alarmSound.play();
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
